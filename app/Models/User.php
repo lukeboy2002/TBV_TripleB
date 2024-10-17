@@ -29,35 +29,32 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array<int, string>
      */
-    protected $fillable
-        = [
-            'username',
-            'email',
-            'password',
-        ];
+    protected $fillable = [
+        'username',
+        'email',
+        'password',
+    ];
 
     /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
      */
-    protected $hidden
-        = [
-            'password',
-            'remember_token',
-            'two_factor_recovery_codes',
-            'two_factor_secret',
-        ];
+    protected $hidden = [
+        'password',
+        'remember_token',
+        'two_factor_recovery_codes',
+        'two_factor_secret',
+    ];
 
     /**
      * The accessors to append to the model's array form.
      *
      * @var array<int, string>
      */
-    protected $appends
-        = [
-            'profile_photo_url',
-        ];
+    protected $appends = [
+        'profile_photo_url',
+    ];
 
     protected function defaultProfilePhotoUrl()
     {
