@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('invitations', function (Blueprint $table) {
             $table->id();
+            $table->string('email')->unique();
+            $table->string('invited_by')->nullable();
+            $table->dateTime('invited_date')->nullable();
+            $table->string('invitation_token', 32)->unique()->nullable();
+            $table->timestamp('registered_at')->nullable();
             $table->timestamps();
         });
     }
