@@ -14,6 +14,7 @@
         </div>
     </x-slot>
 
+
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id neque libero. Integer venenatis massa id lectus
     tincidunt mollis. Cras ac mauris ornare, bibendum nisl quis, tristique velit. Vestibulum dictum posuere bibendum. In
     consequat, ex quis porta placerat, lorem lorem vehicula sem, a convallis nisl est non nunc. Etiam id placerat lorem.

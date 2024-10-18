@@ -9,7 +9,7 @@
                     TBV-TripleB
                 </div>
                 <!-- Navigation Links -->
-                <div class="hidden space-x-4 lg:-my-px lg:ms-10 lg:flex">
+                <div class="hidden space-x-4 lg:-my-px lg:ms-10 lg:flex items-center">
                     <x-link-nav href="{{ route('home') }}" :active="request()->routeIs('home')">
                         {{ __('Home') }}
                     </x-link-nav>
@@ -37,7 +37,7 @@
                     <x-link-nav href="{{ route('contact') }}" :active="request()->routeIs('contact')">
                         {{ __('Contact') }}
                     </x-link-nav>
-                    <div class="border border-l border-orange-500/30"></div>
+                    <div class="border-l w-0.5 h-6 border-orange-500/30"></div>
                     <div class="hidden lg:flex lg:items-center lg:ms-6">
                         @if (Route::has("login"))
                             <nav class="-mx-3 flex flex-1 justify-end">
@@ -104,7 +104,7 @@
                                         </x-dropdown>
                                     </div>
                                 @else
-                                    <div class="ml-2 space-x-2">
+                                    <div class="space-x-2">
                                         <x-link-nav href="{{ route('login') }}" class="text-sm">
                                             Login
                                         </x-link-nav>
@@ -116,9 +116,12 @@
                             </nav>
                         @endif
                     </div>
+                    <div class="flex pl-1 items-center space-x-2">
+                        <div class="border-l w-0.5 h-6 border-orange-500/30"></div>
+                        <x-switcher-theme/>
+                    </div>
+
                 </div>
-
-
                 <!-- Hamburger -->
                 <div class="-me-2 flex items-center lg:hidden">
                     <button @click="open = ! open"
