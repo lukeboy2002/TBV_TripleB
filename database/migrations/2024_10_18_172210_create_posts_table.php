@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignIdFor(Category::class)->constrained()
                 ->restrictOnDelete();
             $table->string('title');
-            $table->string('slug');
+            $table->string('slug')->nullable();
             $table->longText('body');
             $table->string('image')->nullable();
             $table->timestamp('published_at')->nullable();
