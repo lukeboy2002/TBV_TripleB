@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Spatie\Permission\Models\Role;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -16,6 +17,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call(RolesAndPermissionsSeeder::class);
+
         $admin = User::factory()
             ->create([
                 'username' => 'admin',
@@ -24,5 +27,7 @@ class DatabaseSeeder extends Seeder
                 'password' => Hash::make('adminadmin'),
                 'remember_token' => Str::random(10),
             ]);
+        $role = Role::select('id')->where('name', 'admin')->first();
+        $admin->roles()->attach($role);
     }
 }
